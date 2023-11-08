@@ -1,0 +1,38 @@
+Client. ------>
+
+ID_Client (Integer) : Identifiant unique du client.
+Nom (Varchar50) : Nom du client.
+Prénom (Varchar50) : Prénom du client.
+Adresse (Varchar50) : Adresse du client.
+SituationFamiliale (Varchar50) : Situation familiale du client.
+
+
+CompteBancaire --->
+
+ID_Compte (Integer) : Identifiant unique du compte bancaire.
+TypeCompte (Varchar50) : Type de compte bancaire.
+Solde (Decimal) : Solde du compte bancaire.
+ID_Client (Integer) : Clé étrangère référençant l'ID_Client dans la table Client.
+ID_Conseiller (Integer) : Clé étrangère référençant l'ID_Conseiller dans la table ConseillersBancaires.
+
+
+LigneCompte.  ----->
+
+ID_Ligne (Integer) : Identifiant unique de la ligne de compte.
+Description (Varchar50) : Description de la ligne de compte.
+Montant (Decimal) : Montant associé à la ligne de compte.
+ID_Compte (Integer) : Clé étrangère référençant l'ID_Compte dans la table CompteBancaire.
+
+
+BanqueAgence.  ----->
+
+ID_Agence (Integer) : Identifiant unique de l'agence bancaire.
+NomAgence (Varchar50) : Nom de l'agence bancaire.
+AdresseAgence (Varchar50) : Adresse de l'agence bancaire.
+
+ConseillersBancaires.    ----->
+
+ID_Conseiller (Integer) : Identifiant unique du conseiller bancaire.
+NomConseiller (Varchar50) : Nom du conseiller bancaire.
+PrenomConseiller (Varchar50) : Prénom du conseiller bancaire.
+ID_Agence (Integer) : Clé étrangère référençant l'ID_Agence dans la table BanqueAgence.
